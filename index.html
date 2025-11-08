@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alojamiento Web</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #005a9e;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem 2rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    nav button:hover {
+      background: #004b87;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .content {
+      display: none;
+      max-width: 800px;
+      text-align: justify;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      line-height: 1.6;
+    }
+
+    .content.active {
+      display: block;
+    }
+
+    h2 {
+      text-align: center;
+      color: #005a9e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #0078d7;
+      color: white;
+    }
+
+    @media (max-width: 600px) {
+      nav button {
+        flex: 1 1 100%;
+        text-align: center;
+      }
+
+      main {
+        padding: 1rem;
+      }
+
+      .content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Alojamiento Web</h1>
+    <p>Página educativa sobre el funcionamiento del alojamiento web</p>
+  </header>
+
+  <nav>
+    <button onclick="mostrarContenido('quees')">¿Qué es?</button>
+    <button onclick="mostrarContenido('tipos')">Tipos</button>
+    <button onclick="mostrarContenido('funcionamiento')">Funcionamiento</button>
+    <button onclick="mostrarContenido('ventajas')">Ventajas</button>
+    <button onclick="mostrarContenido('elegir')">Cómo elegir</button>
+    <button onclick="mostrarContenido('aws')">AWS</button>
+  </nav>
+
+  <main>
+    <div id="quees" class="content active">
+      <h2>¿Qué es el alojamiento web?</h2><br>
+      <p>El alojamiento web, también conocido como *web hosting*, es un servicio que permite almacenar, publicar y mantener en línea los archivos que componen un sitio web o aplicación. Estos archivos —como imágenes, texto, bases de datos y código— se guardan en servidores que están conectados a Internet las 24 horas del día.</p>
+      <p>Cuando un usuario escribe una dirección web (como www.ejemplo.com), su navegador se conecta con el servidor donde está alojado el sitio, descarga la información y la muestra en pantalla. Sin este servicio, las páginas web no podrían estar disponibles para el público.</p>
+      <p>El alojamiento web puede variar en complejidad y capacidad, desde opciones simples para blogs personales hasta soluciones avanzadas diseñadas para grandes empresas con millones de visitas diarias.</p>
+	  <br>
+	  <center><img src="https://kinsta.com/es/wp-content/uploads/sites/8/2022/05/que-es-el-alojamiento-web-1024x512.jpeg" width="700" height="500" alt="Qué es"></center>
+    </div>
+
+    <div id="tipos" class="content">
+      <h2>Tipos de alojamiento web</h2><br>
+      <p>Existen diferentes tipos de alojamiento web, cada uno con características adaptadas a distintas necesidades. Los más comunes son:</p>
+      <ul>
+        <li><strong>Alojamiento compartido:</strong> Varios sitios web se hospedan en un mismo servidor, compartiendo sus recursos. Es económico y fácil de usar, ideal para principiantes o proyectos pequeños.</li><br>
+        <li><strong>Servidor privado virtual (VPS):</strong> Divide un servidor físico en entornos virtuales independientes. Ofrece mayor control, rendimiento y estabilidad.</li><br>
+        <li><strong>Servidor dedicado:</strong> Un servidor completo es asignado a un solo cliente. Es la opción más potente, recomendada para grandes proyectos que requieren seguridad y rendimiento constante.</li><br>
+        <li><strong>Alojamiento en la nube (Cloud Hosting):</strong> Utiliza una red de servidores interconectados, lo que permite escalar recursos fácilmente y garantizar alta disponibilidad.</li><br>
+        <li><strong>Alojamiento administrado:</strong> Incluye soporte técnico avanzado y mantenimiento continuo, ideal para usuarios sin conocimientos técnicos profundos.</li>
+      </ul>
+		<br>
+		<center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYtqdSDTQXvyaPZo3TgHGPUVQOTNbSbADulA&s" width="700" height="400" alt="Tipos"></center>
+    </div>
+
+    <div id="funcionamiento" class="content">
+      <h2>¿Cómo funciona el alojamiento web?</h2><br>
+      <p>El proceso comienza cuando un desarrollador o empresa contrata un servicio de alojamiento web. Este servicio proporciona espacio en un servidor donde se almacenan los archivos del sitio. Los servidores cuentan con sistemas operativos, software de red, bases de datos y configuraciones que permiten la comunicación con los navegadores de los usuarios.</p>
+      <p>Cuando alguien visita un sitio, su navegador envía una solicitud al servidor utilizando el protocolo HTTP o HTTPS. El servidor responde enviando los datos solicitados, que luego se renderizan en la pantalla del usuario.</p>
+      <p>Además, el alojamiento web está estrechamente vinculado a los dominios (nombres únicos como "midominio.com") y a los DNS (sistemas que traducen esos nombres a direcciones IP). Sin esta infraestructura, la navegación por Internet sería imposible.</p>
+      <p>Los proveedores de hosting modernos también integran sistemas de seguridad, monitoreo de rendimiento, copias de seguridad automáticas y escalabilidad bajo demanda.</p>
+	  <br>
+	  <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNqQHXVMWxzlM56pRs8jv4yqflsGwkK5NlnA&s" width="700" height="400" alt="Qué es"></center>
+    </div>
+
+    <div id="ventajas" class="content">
+      <h2>Ventajas del alojamiento web</h2><br>
+      <p>El uso de servicios de alojamiento web ofrece numerosas ventajas para individuos y empresas:</p>
+      <ul>
+        <li><strong>Accesibilidad global:</strong> Permite que cualquier persona con conexión a Internet pueda acceder al sitio desde cualquier lugar.</li><br>
+        <li><strong>Disponibilidad continua:</strong> Los servidores profesionales garantizan funcionamiento las 24 horas del día.</li><br>
+        <li><strong>Seguridad:</strong> Incluyen medidas contra ataques informáticos, certificados SSL y sistemas de respaldo.</li><br>
+        <li><strong>Escalabilidad:</strong> Los recursos pueden ajustarse según las necesidades del sitio, evitando interrupciones.</li><br>
+        <li><strong>Soporte técnico:</strong> Los proveedores suelen ofrecer asistencia en caso de fallos o configuraciones avanzadas.</li>
+      </ul>
+      <p>Además, los planes de alojamiento modernos se integran con herramientas de análisis, optimización SEO y correo electrónico corporativo, lo que facilita la gestión completa de la presencia digital.</p>
+	 <br>
+	  <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEbkpK6679Jr2Mm7sfzVY6Tsk6-bxsFWqKQw&s" width="700" height="500" alt="Qué es"></center>
+    </div>
+
+    <div id="elegir" class="content">
+      <h2>Cómo elegir un servicio de alojamiento</h2><br>
+      <p>Seleccionar un servicio de alojamiento adecuado es una decisión fundamental para el éxito de un proyecto digital. Algunos factores clave a considerar son:</p>
+      <ul>
+        <li><strong>Tipo de sitio web:</strong> Un blog personal no requiere los mismos recursos que una tienda en línea o una aplicación empresarial.</li><br>
+        <li><strong>Capacidad de almacenamiento y tráfico:</strong> Es importante evaluar la cantidad de espacio y visitas esperadas.</li><br>
+        <li><strong>Rendimiento y velocidad:</strong> Los servidores deben tener hardware potente y una buena red de distribución (CDN) para asegurar tiempos de carga rápidos.</li><br>
+        <li><strong>Seguridad y copias de respaldo:</strong> Contar con sistemas de protección y restauración es vital ante posibles ataques o errores.</li><br>
+        <li><strong>Soporte técnico:</strong> Un servicio de ayuda eficiente puede marcar la diferencia ante imprevistos.</li>
+      </ul>
+      <p>También conviene revisar la reputación del proveedor, sus políticas de renovación y la compatibilidad con las tecnologías del sitio (PHP, Node.js, bases de datos, etc.).</p>
+	 <br>
+	  <center><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTT3L-j6ZUGfYPLX5kQH-RP33piay9bvdDUEQ&s" width="700" height="500" alt="Qué es"></center>
+    </div>
+
+    <div id="aws" class="content">
+      <h2>Alojamiento web con AWS</h2><br>
+      <p>Amazon Web Services (AWS) es uno de los proveedores de alojamiento más potentes y flexibles del mundo. Su infraestructura en la nube permite alojar desde simples sitios estáticos hasta aplicaciones complejas con millones de usuarios.</p>
+      <p>Entre los servicios más utilizados para alojamiento web en AWS se encuentran:</p>
+      <ul>
+        <li><strong>Amazon S3:</strong> Ideal para sitios estáticos y almacenamiento de archivos con alta durabilidad y escalabilidad.</li><br>
+        <li><strong>Amazon EC2:</strong> Proporciona servidores virtuales configurables para ejecutar aplicaciones con total control del entorno.</li><br>
+        <li><strong>Amazon Lightsail:</strong> Una opción simplificada de hosting que combina facilidad de uso con potencia.</li><br>
+        <li><strong>Elastic Beanstalk:</strong> Automatiza la implementación y el escalado de aplicaciones web.</li><br>
+        <li><strong>Route 53:</strong> Gestiona dominios y DNS con gran estabilidad.</li>
+      </ul>
+      <p>Gracias a su enfoque basado en la nube, AWS ofrece alta disponibilidad, redundancia geográfica, seguridad avanzada y la posibilidad de pagar solo por los recursos que realmente se usan. Esto la convierte en una solución ideal para empresas que buscan escalar sin límites y garantizar el rendimiento global de sus sitios o aplicaciones.</p>
+	 <br>
+	  <center><img src="https://www.nmas.com.mx/_next/image/?url=https%3A%2F%2Fstatic-live.nmas.com.mx%2Fnmas-news%2Fstyles%2Fcorte_16_9%2Fcloud-storage%2F2025-10%2FAWS_%2520Qu%25C3%25A9%2520es%2520y%2520Para%2520Qu%25C3%25A9%2520Sirve%2520y%2520Por%2520Qu%25C3%25A9%2520Me%2520Podr%25C3%25ADa%2520Afectar%2520su%2520Ca%25C3%25ADda.jpg%3Fh%3Db6284f32%26itok%3DvjTC2Iiw&w=1920&q=75" width="700" height="400" alt="Qué es"></center>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Alojamiento Web | Página educativa inspirada en AWS</p>
+  </footer>
+
+  <script>
+    function mostrarContenido(id) {
+      const contenidos = document.querySelectorAll('.content');
+      contenidos.forEach(c => c.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
